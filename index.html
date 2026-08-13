@@ -1,185 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leonel Nunes — Desenvolvedor de Software em Formação</title>
-  <meta name="description" content="Portfólio de Leonel Nunes, estudante de Engenharia de Software e Técnico em Informática, com experiência em TI e projetos de desenvolvimento web.">
-  <meta name="theme-color" content="#09090b">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Leonel Nunes — Portfólio de Desenvolvimento de Software">
-  <meta property="og:description" content="Conheça minha trajetória, experiências e projetos com Python, JavaScript, Next.js, Streamlit e MySQL.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Leonel Nunes — Desenvolvedor de Software</title>
+  <meta name="description" content="Portfólio de Leonel Nunes, desenvolvedor de software em formação com projetos em Python, JavaScript, Next.js, Streamlit e MySQL.">
+  <meta name="theme-color" content="#070b0a"><meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:title" content="Leonel Nunes — Desenvolvedor de Software"><meta property="og:description" content="Projetos, experiência e tecnologias de Leonel Nunes."><meta property="og:image" content="leonel-nunes-linkedin.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { ink: '#09090b', panel: '#111116', accent: '#8b5cf6', cyan: '#22d3ee' },
-          fontFamily: { sans: ['DM Sans', 'sans-serif'], display: ['Manrope', 'sans-serif'] }
-        }
-      }
-    }
-  </script>
+  <script>tailwind.config={theme:{extend:{colors:{ink:'#070b0a',panel:'#0d1311',accent:'#48f28b'},fontFamily:{sans:['DM Sans','sans-serif'],display:['Manrope','sans-serif']}}}}</script>
   <style>
-    :root { color-scheme: dark; }
-    body { background: #09090b; }
-    ::selection { background: #8b5cf6; color: white; }
-    .noise { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E"); }
-    .grid-bg { background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 64px 64px; }
-    .text-gradient { background: linear-gradient(100deg,#fff 20%,#a78bfa 70%,#22d3ee); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    .project-card img { transition: transform .7s cubic-bezier(.2,.8,.2,1); }
-    .project-card:hover img { transform: scale(1.04); }
-    .nav-link::after { content: ''; display: block; width: 0; height: 1px; background: #a78bfa; transition: width .25s; }
-    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+    :root{color-scheme:dark}body{background:#070b0a}.grid-bg{background-image:linear-gradient(rgba(72,242,139,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(72,242,139,.035) 1px,transparent 1px);background-size:64px 64px}.glow{background:radial-gradient(circle,rgba(72,242,139,.13),transparent 65%)}.reveal{opacity:0;transform:translateY(22px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}.project img{transition:transform .7s cubic-bezier(.2,.8,.2,1)}.project:hover img{transform:scale(1.025)}.nav-link.active{color:#48f28b}.typing::after{content:'|';color:#48f28b;animation:blink .8s infinite}@keyframes blink{50%{opacity:0}}::selection{background:#48f28b;color:#07100a}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
-<body class="font-sans text-zinc-300 antialiased overflow-x-hidden">
-  <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:left-4 focus:top-4 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-black">Pular para o conteúdo</a>
-  <div class="noise pointer-events-none fixed inset-0 z-50 opacity-[.035]" aria-hidden="true"></div>
-
-  <header id="header" class="fixed inset-x-0 top-0 z-40 border-b border-transparent transition-all duration-300">
+<body class="overflow-x-hidden font-sans text-zinc-300 antialiased">
+  <a href="#conteudo" class="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:m-4 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-black">Pular para o conteúdo</a>
+  <header id="header" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all">
     <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8" aria-label="Navegação principal">
-      <a href="#inicio" class="font-display text-xl font-extrabold tracking-tight text-white" aria-label="Leonel Costa — início">LC<span class="text-accent">.</span></a>
-      <div class="hidden items-center gap-8 md:flex">
-        <a class="nav-link text-sm font-medium text-zinc-400 hover:text-white" href="#inicio">Início</a>
-        <a class="nav-link text-sm font-medium text-zinc-400 hover:text-white" href="#servicos">Serviços</a>
-        <a class="nav-link text-sm font-medium text-zinc-400 hover:text-white" href="#projetos">Projetos</a>
-        <a class="nav-link text-sm font-medium text-zinc-400 hover:text-white" href="#contato">Contato</a>
-        <a href="#contato" class="rounded-full bg-white px-5 py-2.5 text-sm font-bold text-zinc-950 transition hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink">Vamos conversar</a>
-      </div>
-      <button id="menu-button" class="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-white md:hidden" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="relative block h-4 w-5" aria-hidden="true"><span class="menu-line absolute left-0 top-0 h-px w-5 bg-current transition"></span><span class="menu-line absolute left-0 top-[7px] h-px w-5 bg-current transition"></span><span class="menu-line absolute left-0 top-[14px] h-px w-5 bg-current transition"></span></span>
-      </button>
+      <a href="#inicio" class="font-display text-xl font-extrabold text-white">LN<span class="text-accent">.</span></a>
+      <div class="hidden items-center gap-7 md:flex"><a class="nav-link text-sm text-zinc-400 hover:text-white" href="#projetos">Projetos</a><a class="nav-link text-sm text-zinc-400 hover:text-white" href="#tecnologias">Tecnologias</a><a class="nav-link text-sm text-zinc-400 hover:text-white" href="#experiencia">Experiência</a><a class="nav-link text-sm text-zinc-400 hover:text-white" href="#sobre">Sobre</a><a href="#contato" class="rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-ink transition hover:bg-white">Contato</a></div>
+      <button id="menu-button" class="grid h-11 w-11 place-items-center rounded-full border border-white/10 md:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><span class="text-xl">☰</span></button>
     </nav>
-    <div id="mobile-menu" class="hidden border-t border-white/10 bg-ink/95 px-5 py-5 backdrop-blur-xl md:hidden">
-      <div class="mx-auto flex max-w-7xl flex-col gap-1">
-        <a class="mobile-link rounded-xl px-4 py-3 text-lg text-white hover:bg-white/5" href="#inicio">Início</a>
-        <a class="mobile-link rounded-xl px-4 py-3 text-lg text-white hover:bg-white/5" href="#servicos">Serviços</a>
-        <a class="mobile-link rounded-xl px-4 py-3 text-lg text-white hover:bg-white/5" href="#projetos">Projetos</a>
-        <a class="mobile-link rounded-xl px-4 py-3 text-lg text-white hover:bg-white/5" href="#contato">Contato</a>
-      </div>
-    </div>
+    <div id="mobile-menu" class="hidden border-t border-white/10 bg-ink/95 px-5 py-4 backdrop-blur-xl md:hidden"><a class="mobile-link block rounded-xl px-4 py-3" href="#projetos">Projetos</a><a class="mobile-link block rounded-xl px-4 py-3" href="#tecnologias">Tecnologias</a><a class="mobile-link block rounded-xl px-4 py-3" href="#experiencia">Experiência</a><a class="mobile-link block rounded-xl px-4 py-3" href="#sobre">Sobre</a><a class="mobile-link block rounded-xl px-4 py-3 text-accent" href="#contato">Contato</a></div>
   </header>
 
   <main id="conteudo">
-    <section id="inicio" class="grid-bg relative flex min-h-screen items-center overflow-hidden pt-28">
-      <div class="absolute -left-32 top-28 h-80 w-80 rounded-full bg-accent/20 blur-[120px]" aria-hidden="true"></div>
-      <div class="absolute -right-24 bottom-10 h-72 w-72 rounded-full bg-cyan/10 blur-[110px]" aria-hidden="true"></div>
+    <section id="inicio" class="grid-bg relative flex min-h-screen items-center overflow-hidden pt-24">
+      <div class="glow absolute -left-20 top-28 h-96 w-96" aria-hidden="true"></div>
       <div class="mx-auto grid w-full max-w-7xl items-center gap-14 px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_.85fr]">
         <div class="reveal">
-          <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-xs font-semibold uppercase tracking-[.18em] text-zinc-300"><span class="h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span> Aberto a estágio e oportunidades iniciais</p>
-          <h1 class="max-w-4xl font-display text-5xl font-extrabold leading-[1.02] tracking-[-.045em] text-white sm:text-6xl lg:text-7xl">Eu crio sites que ajudam seu negócio a <span class="text-gradient">ser visto e escolhido.</span></h1>
-          <p class="mt-7 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl">Oi, eu sou o Leonel. Transformo ideias em páginas bonitas, rápidas e fáceis de usar — feitas para apresentar seu trabalho e trazer novas oportunidades.</p>
-          <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-            <a href="https://wa.me/5531984343066?text=Oi%20Leonel!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener noreferrer" class="group inline-flex items-center justify-center gap-3 rounded-full bg-accent px-7 py-4 font-bold text-white shadow-lg shadow-accent/20 transition hover:-translate-y-0.5 hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink">Quero um site <span class="transition group-hover:translate-x-1" aria-hidden="true">→</span></a>
-            <a href="#projetos" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[.03] px-7 py-4 font-bold text-white transition hover:border-white/30 hover:bg-white/[.07]">Ver o que já criei</a>
-          </div>
+          <p class="mb-6 font-mono text-sm text-accent">Olá, meu nome é</p>
+          <h1 class="font-display text-5xl font-extrabold leading-none tracking-[-.045em] text-white sm:text-7xl">Leonel Nunes.</h1>
+          <h2 class="mt-3 font-display text-4xl font-bold leading-tight tracking-[-.035em] text-zinc-500 sm:text-6xl">Desenvolvedor de Software <span class="text-white">em formação.</span></h2>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-zinc-400">Construo aplicações web e sistemas utilizando Python, JavaScript, Java, Next.js e MySQL, transformando problemas reais em soluções simples e funcionais.</p>
+          <div class="mt-9 flex flex-wrap gap-3"><a href="#projetos" class="rounded-full bg-accent px-7 py-4 font-bold text-ink transition hover:-translate-y-0.5 hover:bg-white">Ver projetos →</a><a href="https://github.com/leleons" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/15 px-7 py-4 font-bold text-white hover:border-accent">GitHub</a><a href="curriculo-leonel-nunes.pdf" download class="rounded-full border border-white/15 px-7 py-4 font-bold text-white hover:border-accent">Baixar currículo</a></div>
+          <p class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-zinc-300"><span class="h-2 w-2 animate-pulse rounded-full bg-accent"></span> Disponível para estágio em Desenvolvimento de Software</p>
         </div>
-        <div class="reveal relative mx-auto w-full max-w-md" aria-label="Apresentação pessoal de Leonel Nunes">
-          <div class="absolute -inset-3 rotate-3 rounded-[2rem] border border-accent/30"></div>
-          <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-panel shadow-2xl">
-            <img class="h-full w-full object-cover object-center" src="leonel-nunes-linkedin.png" alt="Leonel Nunes, desenvolvedor de software e Técnico em Informática" width="1080" height="1350">
-            <div class="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" aria-hidden="true"></div>
-            <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-2xl border border-white/10 bg-black/50 p-4 backdrop-blur-xl">
-              <div><p class="text-xs uppercase tracking-widest text-zinc-400">Leonel Nunes</p><p class="mt-1 font-semibold text-white">Sabará, Minas Gerais</p></div><div class="grid h-11 w-11 place-items-center rounded-full bg-accent text-xl" aria-hidden="true">✦</div>
-            </div>
-          </div>
-        </div>
+        <div class="reveal relative mx-auto w-full max-w-md"><div class="absolute -inset-3 rotate-3 rounded-[2rem] border border-accent/30"></div><div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-panel"><img class="h-full w-full object-cover" src="leonel-nunes-linkedin.png" alt="Leonel Nunes, Técnico em Informática e desenvolvedor de software" width="1080" height="1350"><div class="absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-black/70 p-4 backdrop-blur"><p class="font-semibold text-white">Técnico em Informática · IFMG</p><p class="mt-1 text-sm text-zinc-400">Engenharia de Software · UNIBH</p></div></div></div>
       </div>
     </section>
 
-    <section id="servicos" class="py-28 sm:py-36">
-      <div class="mx-auto max-w-7xl px-5 sm:px-8">
-        <div class="reveal mb-14 max-w-3xl"><p class="mb-4 text-sm font-bold uppercase tracking-[.22em] text-accent">Como posso ajudar</p><h2 class="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Seu negócio merece mais do que apenas “estar na internet”.</h2><p class="mt-6 text-lg leading-8 text-zinc-400">Cada projeto começa com uma conversa. Eu entendo o que você precisa comunicar e construo uma presença digital clara, profissional e com a sua personalidade.</p></div>
-        <div class="grid gap-5 md:grid-cols-3">
-          <article class="reveal rounded-3xl border border-white/[.08] bg-white/[.03] p-7 transition hover:-translate-y-1 hover:border-accent/40"><span class="text-sm font-bold text-accent">01</span><h3 class="mt-8 font-display text-2xl font-bold text-white">Landing pages</h3><p class="mt-4 leading-7 text-zinc-500">Uma página focada em apresentar uma oferta, campanha ou serviço e levar o visitante até o contato.</p></article>
-          <article class="reveal rounded-3xl border border-white/[.08] bg-white/[.03] p-7 transition hover:-translate-y-1 hover:border-accent/40"><span class="text-sm font-bold text-accent">02</span><h3 class="mt-8 font-display text-2xl font-bold text-white">Sites profissionais</h3><p class="mt-4 leading-7 text-zinc-500">Sua empresa com uma presença confiável, responsiva e organizada para funcionar bem no celular e no computador.</p></article>
-          <article class="reveal rounded-3xl border border-white/[.08] bg-white/[.03] p-7 transition hover:-translate-y-1 hover:border-accent/40"><span class="text-sm font-bold text-accent">03</span><h3 class="mt-8 font-display text-2xl font-bold text-white">Sistemas sob medida</h3><p class="mt-4 leading-7 text-zinc-500">Ferramentas web para organizar processos, cadastros e informações que hoje consomem o tempo da sua equipe.</p></article>
-        </div>
-        <div class="reveal mt-12 rounded-3xl border border-accent/20 bg-accent/[.07] p-7 sm:p-10"><p class="text-sm font-bold uppercase tracking-widest text-violet-300">Meu processo</p><div class="mt-7 grid gap-7 md:grid-cols-4"><div><strong class="text-white">1. Conversa</strong><p class="mt-2 text-sm text-zinc-400">Entendo seu negócio e objetivo.</p></div><div><strong class="text-white">2. Direção</strong><p class="mt-2 text-sm text-zinc-400">Organizo conteúdo e visual.</p></div><div><strong class="text-white">3. Construção</strong><p class="mt-2 text-sm text-zinc-400">Desenvolvo e mostro a evolução.</p></div><div><strong class="text-white">4. Entrega</strong><p class="mt-2 text-sm text-zinc-400">Publico e ensino você a usar.</p></div></div></div>
-      </div>
-    </section>
+    <section aria-label="Resumo em números" class="border-y border-white/[.07] bg-white/[.02]"><div class="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 py-10 sm:px-8 md:grid-cols-4"><div><strong class="font-display text-3xl text-white">2+</strong><p class="text-sm text-zinc-500">Projetos completos</p></div><div><strong class="font-display text-3xl text-white">10+</strong><p class="text-sm text-zinc-500">Tecnologias</p></div><div><strong class="font-display text-3xl text-white">3</strong><p class="text-sm text-zinc-500">Idiomas</p></div><div><strong class="font-display text-3xl text-white">2</strong><p class="text-sm text-zinc-500">Formações em tecnologia</p></div></div></section>
 
-    <section aria-label="Resultados em números" class="border-y border-white/[.07] bg-white/[.02]">
-      <div class="mx-auto grid max-w-7xl grid-cols-2 gap-y-8 px-5 py-10 sm:px-8 md:grid-cols-4">
-        <div><strong class="font-display text-2xl text-white">UNIBH</strong><p class="mt-1 text-sm text-zinc-500">Engenharia de Software</p></div>
-        <div><strong class="font-display text-2xl text-white">IFMG</strong><p class="mt-1 text-sm text-zinc-500">Técnico em Informática</p></div>
-        <div><strong class="font-display text-2xl text-white">Dsystem</strong><p class="mt-1 text-sm text-zinc-500">Experiência profissional em TI</p></div>
-        <div><strong class="font-display text-2xl text-white">3 idiomas</strong><p class="mt-1 text-sm text-zinc-500">Português, inglês e espanhol</p></div>
-      </div>
-    </section>
+    <section id="projetos" class="py-28 sm:py-36"><div class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="reveal mb-14 max-w-3xl"><p class="mb-4 font-mono text-sm text-accent">01. O que eu construí</p><h2 class="font-display text-4xl font-extrabold text-white sm:text-5xl">Projetos em destaque</h2><p class="mt-5 text-lg text-zinc-400">Sistemas completos que me desafiaram a pensar em interface, regras de negócio, banco de dados e entrega.</p></div>
+      <article class="project reveal grid overflow-hidden rounded-3xl border border-white/[.08] bg-panel lg:grid-cols-[1.2fr_.8fr]"><div class="overflow-hidden bg-zinc-950"><img class="h-full min-h-80 w-full object-cover object-left-top" src="dssystem-erp.png" alt="Tela real de acesso do Dsystem ERP" loading="lazy"></div><div class="flex flex-col justify-center p-7 sm:p-10"><span class="font-mono text-sm text-accent">Projeto principal</span><h3 class="mt-3 font-display text-3xl font-bold text-white">Dsystem ERP</h3><p class="mt-4 leading-7 text-zinc-400">Sistema de gestão empresarial criado para centralizar processos operacionais e administrativos.</p><div class="mt-6 grid gap-5 sm:grid-cols-2"><div><strong class="text-white">Problema</strong><p class="mt-1 text-sm text-zinc-500">Processos e informações dispersos.</p></div><div><strong class="text-white">Solução</strong><p class="mt-1 text-sm text-zinc-500">Uma plataforma integrada e modular.</p></div></div><ul class="mt-6 grid gap-2 text-sm text-zinc-400 sm:grid-cols-2"><li>✓ Ordens de serviço</li><li>✓ Estoque e compras</li><li>✓ Financeiro e contratos</li><li>✓ Portal do cliente</li><li>✓ Migrações e testes</li><li>✓ Rotinas de deploy</li></ul><div class="mt-7 flex flex-wrap gap-2"><span class="rounded bg-white/10 px-3 py-1 text-xs">Python</span><span class="rounded bg-white/10 px-3 py-1 text-xs">Streamlit</span><span class="rounded bg-white/10 px-3 py-1 text-xs">MySQL</span></div></div></article>
+      <article class="project reveal mt-7 grid overflow-hidden rounded-3xl border border-white/[.08] bg-panel lg:grid-cols-[.8fr_1.2fr]"><div class="order-2 flex flex-col justify-center p-7 sm:p-10 lg:order-1"><span class="font-mono text-sm text-accent">Aplicação web full stack</span><h3 class="mt-3 font-display text-3xl font-bold text-white">Loja de Ferramentas</h3><p class="mt-4 leading-7 text-zinc-400">Sistema web para gerenciamento de produtos, clientes, funcionários, fornecedores e vendas.</p><ul class="mt-6 grid gap-2 text-sm text-zinc-400 sm:grid-cols-2"><li>✓ Operações CRUD</li><li>✓ Controle de estoque</li><li>✓ Gestão de vendas</li><li>✓ Banco relacional</li><li>✓ Views e triggers</li><li>✓ Procedures SQL</li></ul><div class="mt-7 flex flex-wrap gap-2"><span class="rounded bg-white/10 px-3 py-1 text-xs">Next.js</span><span class="rounded bg-white/10 px-3 py-1 text-xs">JavaScript</span><span class="rounded bg-white/10 px-3 py-1 text-xs">MySQL</span><span class="rounded bg-white/10 px-3 py-1 text-xs">Node.js</span></div><a href="https://github.com/leleons/loja_ferramentas" target="_blank" rel="noopener noreferrer" class="mt-7 font-bold text-accent hover:text-white">Ver código no GitHub →</a></div><div class="order-1 overflow-hidden bg-zinc-950 lg:order-2"><img class="h-full min-h-80 w-full object-cover" src="loja-ferramentas-github.png" alt="Repositório real do sistema Loja de Ferramentas no GitHub" loading="lazy"></div></article>
+    </div></section>
 
-    <section id="sobre" class="border-y border-white/[.07] bg-white/[.02] py-28 sm:py-36">
-      <div class="mx-auto grid max-w-7xl gap-16 px-5 sm:px-8 lg:grid-cols-2 lg:gap-24">
-        <div class="reveal">
-          <p class="mb-4 text-sm font-bold uppercase tracking-[.22em] text-accent">Sobre mim</p>
-          <h2 class="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Tecnologia com conversa simples e compromisso de verdade.</h2>
-        </div>
-        <div class="reveal">
-          <p class="text-lg leading-8 text-zinc-400">Minha história com tecnologia começou no curso Técnico em Informática do IFMG. Hoje estudo Engenharia de Software na UNIBH e trabalho com TI na Dsystem Tecnologia. Foi resolvendo problemas reais que percebi algo importante: tecnologia boa é aquela que facilita a vida das pessoas.</p>
-          <p class="mt-5 leading-7 text-zinc-500">Por isso, não quero apenas entregar código. Quero ouvir sua ideia, explicar cada decisão sem complicação e criar algo que você tenha orgulho de mostrar aos seus clientes.</p>
-          <div class="mt-9 flex flex-wrap gap-2" aria-label="Habilidades técnicas">
-            <span class="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm">Python</span><span class="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm">Java</span><span class="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm">JavaScript</span><span class="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm">SQL</span><span class="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm">Next.js</span><span class="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm">Node.js</span><span class="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm">Streamlit</span><span class="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm">MySQL</span><span class="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm">Git & GitHub</span><span class="rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-sm">APIs REST</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="tecnologias" class="border-y border-white/[.07] bg-white/[.02] py-28"><div class="mx-auto max-w-7xl px-5 sm:px-8"><div class="reveal mb-12"><p class="mb-4 font-mono text-sm text-accent">02. Minha caixa de ferramentas</p><h2 class="font-display text-4xl font-extrabold text-white sm:text-5xl">Tecnologias</h2></div><div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4"><div class="reveal rounded-2xl border border-white/[.08] bg-panel p-6"><p class="text-2xl">⌘</p><h3 class="mt-6 font-bold text-white">Back-end</h3><p class="mt-3 leading-7 text-zinc-500">Python · Java · Node.js · APIs REST</p></div><div class="reveal rounded-2xl border border-white/[.08] bg-panel p-6"><p class="text-2xl">◫</p><h3 class="mt-6 font-bold text-white">Front-end</h3><p class="mt-3 leading-7 text-zinc-500">JavaScript · Next.js · HTML · CSS</p></div><div class="reveal rounded-2xl border border-white/[.08] bg-panel p-6"><p class="text-2xl">◉</p><h3 class="mt-6 font-bold text-white">Banco de dados</h3><p class="mt-3 leading-7 text-zinc-500">MySQL · SQL · Modelagem relacional</p></div><div class="reveal rounded-2xl border border-white/[.08] bg-panel p-6"><p class="text-2xl">⌁</p><h3 class="mt-6 font-bold text-white">Ferramentas</h3><p class="mt-3 leading-7 text-zinc-500">Git · GitHub · VS Code · Streamlit · Power BI</p></div></div></div></section>
 
-    <section id="projetos" class="border-y border-white/[.07] bg-panel/60 py-28 sm:py-36">
-      <div class="mx-auto max-w-7xl px-5 sm:px-8">
-        <div class="reveal mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div><p class="mb-4 text-sm font-bold uppercase tracking-[.22em] text-accent">Projetos em destaque</p><h2 class="max-w-2xl font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Soluções reais, construídas com cuidado.</h2></div>
-          <p class="max-w-sm text-zinc-500">Projetos nos quais explorei sistemas de gestão, desenvolvimento web e bancos de dados.</p>
-        </div>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <article class="project-card reveal overflow-hidden rounded-3xl border border-white/[.08] bg-ink transition hover:-translate-y-1 hover:border-accent/40">
-            <div class="aspect-[4/3] overflow-hidden"><img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1000&q=80" alt="Telas do aplicativo financeiro Nexo" loading="lazy" width="1000" height="750"></div>
-            <div class="p-6"><div class="flex items-start justify-between gap-4"><h3 class="font-display text-2xl font-bold text-white">Dsystem ERP</h3><span class="text-accent" aria-hidden="true">↗</span></div><p class="mt-3 text-sm leading-6 text-zinc-500">Sistema de gestão empresarial com atendimento, ordens de serviço, estoque, compras, faturamento, financeiro, contratos e portal do cliente.</p><div class="mt-5 flex flex-wrap gap-2"><span class="text-xs text-zinc-400">Python</span><span class="text-xs text-zinc-600">•</span><span class="text-xs text-zinc-400">Streamlit</span><span class="text-xs text-zinc-600">•</span><span class="text-xs text-zinc-400">MySQL</span></div><a href="https://github.com/leleons" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex font-semibold text-white hover:text-accent" aria-label="Ver Dsystem ERP no GitHub">Ver no GitHub →</a></div>
-          </article>
-          <article class="project-card reveal overflow-hidden rounded-3xl border border-white/[.08] bg-ink transition hover:-translate-y-1 hover:border-accent/40">
-            <div class="aspect-[4/3] overflow-hidden"><img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=80" alt="Experiência de compra da loja Aster" loading="lazy" width="1000" height="750"></div>
-            <div class="p-6"><div class="flex items-start justify-between gap-4"><h3 class="font-display text-2xl font-bold text-white">Loja de Ferramentas</h3><span class="text-accent" aria-hidden="true">↗</span></div><p class="mt-3 text-sm leading-6 text-zinc-500">Aplicação web para gerenciar produtos, clientes, fornecedores e vendas, apoiada por um banco relacional completo.</p><div class="mt-5 flex flex-wrap gap-2"><span class="text-xs text-zinc-400">Next.js</span><span class="text-xs text-zinc-600">•</span><span class="text-xs text-zinc-400">JavaScript</span><span class="text-xs text-zinc-600">•</span><span class="text-xs text-zinc-400">MySQL</span></div><a href="https://github.com/leleons" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex font-semibold text-white hover:text-accent" aria-label="Ver Loja de Ferramentas no GitHub">Ver no GitHub →</a></div>
-          </article>
-          <article class="project-card reveal overflow-hidden rounded-3xl border border-white/[.08] bg-ink transition hover:-translate-y-1 hover:border-accent/40 md:col-span-2 lg:col-span-1">
-            <div class="aspect-[4/3] overflow-hidden"><img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80" alt="Equipe usando a plataforma Orbit" loading="lazy" width="1000" height="750"></div>
-            <div class="p-6"><div class="flex items-start justify-between gap-4"><h3 class="font-display text-2xl font-bold text-white">Próximo projeto</h3><span class="text-accent" aria-hidden="true">+</span></div><p class="mt-3 text-sm leading-6 text-zinc-500">Estou sempre estudando e construindo. Este espaço está reservado para o próximo desafio que vai ampliar minha experiência.</p><div class="mt-5 flex flex-wrap gap-2"><span class="text-xs text-zinc-400">Aprendizado contínuo</span><span class="text-xs text-zinc-600">•</span><span class="text-xs text-zinc-400">Novas ideias</span></div><a href="#contato" class="mt-6 inline-flex font-semibold text-white hover:text-accent" aria-label="Conversar sobre um novo projeto">Vamos construir juntos →</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
+    <section id="experiencia" class="py-28"><div class="mx-auto max-w-5xl px-5 sm:px-8"><div class="reveal mb-12"><p class="mb-4 font-mono text-sm text-accent">03. Onde já atuei</p><h2 class="font-display text-4xl font-extrabold text-white sm:text-5xl">Experiência</h2></div><div class="reveal relative border-l border-accent/40 pl-8"><span class="absolute -left-2 top-1 h-4 w-4 rounded-full bg-accent shadow-[0_0_20px_#48f28b]"></span><div class="flex flex-col justify-between gap-3 sm:flex-row"><div><h3 class="text-xl font-bold text-white">Dsystem Tecnologia</h3><p class="text-accent">Estagiário de TI</p></div><time class="font-mono text-sm text-zinc-500">Jul/2026 — Atual</time></div><p class="mt-5 max-w-3xl leading-7 text-zinc-400">Apoio às rotinas de TI, suporte técnico, manutenção, configuração de sistemas e resolução de problemas. Participação nas demandas da equipe com contato direto com usuários, processos e soluções internas.</p></div><div class="reveal relative mt-12 border-l border-white/10 pl-8"><span class="absolute -left-2 top-1 h-4 w-4 rounded-full bg-zinc-600"></span><h3 class="text-xl font-bold text-white">RM Informática</h3><p class="text-zinc-400">Estagiário · 2 meses</p><p class="mt-5 max-w-3xl leading-7 text-zinc-500">Suporte a computadores e usuários, instalação de programas, manutenção preventiva, organização de equipamentos e atendimento ao cliente.</p></div></div></section>
 
-    <section id="contato" class="relative overflow-hidden py-28 sm:py-36">
-      <div class="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 rounded-full bg-accent/10 blur-[130px]" aria-hidden="true"></div>
-      <div class="relative mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[.85fr_1.15fr] lg:gap-24">
-        <div class="reveal"><p class="mb-4 text-sm font-bold uppercase tracking-[.22em] text-accent">Seu próximo passo</p><h2 class="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Vamos transformar sua ideia em um site que trabalha por você?</h2><p class="mt-6 max-w-md text-lg leading-8 text-zinc-400">Me conte o que você faz e onde quer chegar. A primeira conversa é sem compromisso — e sem linguagem complicada.</p><a class="mt-8 inline-flex rounded-full bg-emerald-500 px-6 py-3 font-bold text-zinc-950 transition hover:-translate-y-0.5 hover:bg-emerald-400" href="https://wa.me/5531984343066?text=Oi%20Leonel!%20Quero%20pedir%20um%20or%C3%A7amento%20para%20meu%20site." target="_blank" rel="noopener noreferrer">Pedir orçamento no WhatsApp →</a><br><a class="mt-6 inline-block text-zinc-400 hover:text-white" href="mailto:leonsn2008@gmail.com">leonsn2008@gmail.com</a></div>
-        <form id="contact-form" class="reveal rounded-3xl border border-white/[.08] bg-white/[.03] p-6 sm:p-8" novalidate>
-          <div class="grid gap-6 sm:grid-cols-2">
-            <div><label for="name" class="mb-2 block text-sm font-medium text-white">Seu nome</label><input id="name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="Como posso chamar você?" class="w-full rounded-xl border border-white/10 bg-ink px-4 py-3.5 text-white outline-none transition placeholder:text-zinc-700 focus:border-accent focus:ring-2 focus:ring-accent/20"><p class="field-error mt-2 hidden text-xs text-red-400">Informe seu nome.</p></div>
-            <div><label for="email" class="mb-2 block text-sm font-medium text-white">Seu e-mail</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="voce@empresa.com" class="w-full rounded-xl border border-white/10 bg-ink px-4 py-3.5 text-white outline-none transition placeholder:text-zinc-700 focus:border-accent focus:ring-2 focus:ring-accent/20"><p class="field-error mt-2 hidden text-xs text-red-400">Informe um e-mail válido.</p></div>
-          </div>
-          <div class="mt-6"><label for="message" class="mb-2 block text-sm font-medium text-white">Sobre o projeto</label><textarea id="message" name="message" rows="5" required minlength="10" placeholder="Objetivo, prazo, contexto..." class="w-full resize-none rounded-xl border border-white/10 bg-ink px-4 py-3.5 text-white outline-none transition placeholder:text-zinc-700 focus:border-accent focus:ring-2 focus:ring-accent/20"></textarea><p class="field-error mt-2 hidden text-xs text-red-400">Conte um pouco mais sobre o projeto.</p></div>
-          <button type="submit" class="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-4 font-bold text-white transition hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink sm:w-auto">Enviar mensagem <span aria-hidden="true">→</span></button>
-          <div id="form-feedback" class="mt-5 hidden rounded-xl border px-4 py-3 text-sm" role="status" aria-live="polite"></div>
-        </form>
-      </div>
-    </section>
+    <section id="sobre" class="border-y border-white/[.07] bg-panel py-28"><div class="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-2"><div class="reveal"><p class="mb-4 font-mono text-sm text-accent">04. Formação e perfil</p><h2 class="font-display text-4xl font-extrabold text-white sm:text-5xl">Aprendo construindo.</h2><p class="mt-6 text-lg leading-8 text-zinc-400">Sou Técnico em Informática pelo IFMG e estudante de Engenharia de Software na UNIBH. Gosto de entender como as partes se conectam — da regra de negócio à interface — e de transformar conhecimento em projetos que realmente funcionam.</p></div><div class="reveal grid gap-4"><div class="rounded-2xl border border-white/[.08] bg-ink p-6"><p class="text-sm text-accent">2026 — 2029</p><h3 class="mt-2 font-bold text-white">Bacharelado em Engenharia de Software</h3><p class="mt-1 text-zinc-500">UNIBH · Belo Horizonte</p></div><div class="rounded-2xl border border-white/[.08] bg-ink p-6"><p class="text-sm text-accent">Concluído em 2025</p><h3 class="mt-2 font-bold text-white">Técnico em Informática</h3><p class="mt-1 text-zinc-500">IFMG · Campus São João Evangelista</p></div><div class="rounded-2xl border border-white/[.08] bg-ink p-6"><h3 class="font-bold text-white">Idiomas</h3><p class="mt-2 text-zinc-500">Português nativo · Inglês intermediário · Espanhol intermediário</p></div></div></div></section>
+
+    <section id="contato" class="relative overflow-hidden py-28"><div class="glow absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2"></div><div class="relative mx-auto max-w-4xl px-5 text-center sm:px-8"><div class="reveal"><p class="font-mono text-sm text-accent">05. Vamos conversar?</p><h2 class="mt-5 font-display text-4xl font-extrabold text-white sm:text-6xl">Busco meu próximo desafio em desenvolvimento.</h2><p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-400">Se você procura alguém curioso, comprometido e com vontade de evoluir junto com o time, será um prazer conversar.</p><div class="mt-9 flex flex-wrap justify-center gap-3"><a href="mailto:leonsn2008@gmail.com" class="rounded-full bg-accent px-7 py-4 font-bold text-ink hover:bg-white">Enviar e-mail</a><a href="https://linkedin.com/in/leonel-nunes" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/15 px-7 py-4 font-bold text-white hover:border-accent">LinkedIn</a><a href="https://wa.me/5531984343066" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/15 px-7 py-4 font-bold text-white hover:border-accent">WhatsApp</a></div></div></div></section>
   </main>
-
-  <footer class="border-t border-white/[.07]">
-    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-5 py-8 text-sm text-zinc-500 sm:px-8 md:flex-row">
-      <p>© <span id="year"></span> Leonel Nunes. Feito com curiosidade e código.</p>
-      <div class="flex items-center gap-6"><a href="https://linkedin.com/in/leonel-nunes" target="_blank" rel="noopener noreferrer" class="hover:text-white">LinkedIn</a><a href="https://github.com/leleons" target="_blank" rel="noopener noreferrer" class="hover:text-white">GitHub</a><a href="curriculo-leonel-nunes.pdf" download class="hover:text-white">Currículo</a></div>
-      <a href="#inicio" class="hover:text-white" aria-label="Voltar ao topo">Voltar ao topo ↑</a>
-    </div>
-  </footer>
+  <footer class="border-t border-white/[.07]"><div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-5 py-8 text-sm text-zinc-600 sm:px-8 md:flex-row"><p>© <span id="year"></span> Leonel Nunes. Construído com código e curiosidade.</p><div class="flex gap-6"><a href="https://github.com/leleons" target="_blank" rel="noopener noreferrer" class="hover:text-white">GitHub</a><a href="https://linkedin.com/in/leonel-nunes" target="_blank" rel="noopener noreferrer" class="hover:text-white">LinkedIn</a><a href="#inicio" class="hover:text-white">Voltar ao topo ↑</a></div></div></footer>
   <script src="script.js" defer></script>
-</body>
-</html>
+</body></html>
