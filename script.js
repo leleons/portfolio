@@ -4,9 +4,10 @@ const mobileMenu = document.querySelector('#mobile-menu');
 const menuLines = menuButton.querySelectorAll('.menu-line');
 
 function setMenu(open) {
+  const english = document.documentElement.lang === 'en';
   mobileMenu.classList.toggle('hidden', !open);
   menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  menuButton.setAttribute('aria-label', open ? (english ? 'Close menu' : 'Fechar menu') : (english ? 'Open menu' : 'Abrir menu'));
   menuLines[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
   menuLines[1].style.opacity = open ? '0' : '1';
   menuLines[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
@@ -31,11 +32,19 @@ const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'none';
       revealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
-document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
+document.querySelectorAll('.reveal').forEach(element => {
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(24px)';
+  }
+  revealObserver.observe(element);
+});
 
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -74,17 +83,19 @@ form.addEventListener('submit', event => {
   const valid = [...fields].map(validateField).every(Boolean);
   feedback.classList.remove('hidden', 'border-emerald-400/30', 'bg-emerald-400/10', 'text-emerald-300', 'border-red-400/30', 'bg-red-400/10', 'text-red-300');
   if (!valid) {
-    feedback.textContent = 'Revise os campos destacados antes de enviar.';
+    feedback.textContent = document.documentElement.lang === 'en' ? 'Please review the highlighted fields.' : 'Revise os campos destacados antes de enviar.';
     feedback.classList.add('border-red-400/30', 'bg-red-400/10', 'text-red-300');
     form.querySelector(':invalid')?.focus();
     return;
   }
   const data = new FormData(form);
-  const subject = encodeURIComponent(`Contato pelo portfólio — ${data.get('name')}`);
-  const body = encodeURIComponent(`${data.get('message')}\n\nNome: ${data.get('name')}\nE-mail: ${data.get('email')}`);
-  feedback.textContent = 'Tudo certo! Seu aplicativo de e-mail será aberto para concluir o envio.';
+  const english = document.documentElement.lang === 'en';
+  const subject = encodeURIComponent(`${english ? 'Portfolio inquiry' : 'Contato pelo portfólio'} — ${data.get('name')}`);
+  const body = encodeURIComponent(`${data.get('message')}\n\n${english ? 'Name' : 'Nome'}: ${data.get('name')}\n${english ? 'Email' : 'E-mail'}: ${data.get('email')}`);
+  feedback.textContent = english ? 'All set! Your email app will open so you can finish sending your message.' : 'Tudo certo! Seu aplicativo de e-mail será aberto para concluir o envio.';
   feedback.classList.add('border-emerald-400/30', 'bg-emerald-400/10', 'text-emerald-300');
   window.location.href = `mailto:leonsn2008@gmail.com?subject=${subject}&body=${body}`;
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+
